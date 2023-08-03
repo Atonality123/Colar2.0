@@ -1,0 +1,48 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block content%}
+<link rel="stylesheet" href="{% static 'game.css' %}">
+
+<header>
+    <h1>Welcome to game</h1>
+</header>
+
+<div class="container">
+    <div class="card">
+        <video id="vdo" poster="{% static 'wheel.png' %}">
+            <source src="https://cdn-icons-mp4.flaticon.com/512/7403/7403016.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Spin Wheel</h1>
+        <p class="title">Join the eco-friendly adventure and spin the wheel to win while making a difference! Every spin supports our mission to save the Earth. Play the spin wheel game and be a part of the solution for a greener planet!</p>
+        <p class="button"><button id="playButton" type="button">Let's spin!</button></p>
+    </div>
+</div>
+
+<script>
+    // Get the video element by its ID
+    const videoElement = document.getElementById('vdo');
+
+    // Get the play button element by its ID
+    const playButton = document.getElementById('playButton');
+
+    // Function to play the video when the button is clicked
+    playButton.addEventListener('click', () => {
+        videoElement.play();
+    });
+
+    // Function to show an alert when the animation ends
+    videoElement.addEventListener('ended', () => {
+        const result = confirm('Congratulations! You have completed the animation. Click "OK" to continue.');
+        if (result) {
+            window.location.href = "{% url 'game' %}";
+        } else {
+            videoElement.currentTime = 0; 
+            videoElement.pause(); 
+            videoElement.poster = "{% static 'wheel.png' %}";
+        }
+    });
+</script>
+
+{% endblock %}

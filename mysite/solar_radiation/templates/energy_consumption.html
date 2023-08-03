@@ -1,0 +1,89 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'thon.css' %}">
+
+<header>
+    <h1>Hackathon 2023</h1>
+    <p>Prediction Solar Energy</p>
+</header>
+
+<section class="about">
+    <h2>About the Hackathon</h2>
+    <p>Energy consumption refers to the total amount of energy used by individuals, industries, businesses, and nations to meet their energy needs and carry out various activities. It is a key indicator of economic development and a critical factor in the sustainability of human activities. Energy consumption is typically measured in units such as kilowatt-hours (kWh) or joules (J).</p>
+</section>
+
+<section class="about">
+    <h2>Dowload train set</h2>
+    <a href="https://drive.google.com/uc?export=download&id=1gIW_8da-Fb0e--4iOMa6a7ks34rQUV_9" class="button button-download" download>Download CSV File</a>
+</section>
+
+<section class="schedule">
+    <h2>Schedule</h2>
+    <ul>
+        <li>Registration: July 15, 2023</li>
+        <li>Opening Ceremony: July 30, 2023</li>
+        <li>Hacking Begins: July 31, 2023</li>
+        <li>Judging & Closing Ceremony: August 5, 2023</li>
+    </ul>
+</section>
+
+<section class="prizes">
+    <h2>Prizes</h2>
+    <p>Top teams have a chance to win:</p>
+    <ul>
+        <li>1st Place: $5000</li>
+        <li>2nd Place: $3000</li>
+        <li>3rd Place: $2000</li>
+    </ul>
+</section>
+
+<section class="prizes">
+    <h2>Leaderboard</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Team Name</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Team A</td>
+            <td>480</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Team B</td>
+            <td>450</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Team C</td>
+            <td>410</td>
+        </tr>
+    </table>
+</section>
+
+<section class="download">
+    <h2>Download Test set</h2>
+    <a href="https://drive.google.com/uc?export=download&id=1YkpKEJ9rZNUVoC9aSG6W0Ywle-mnpnAe" class="button button-download" download>Download CSV File</a>
+</section>
+
+<section class="prizes">
+    <h2>Submit</h2> 
+    <form id="csvForm" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" id="csvFile" name="csv_file" accept=".csv">
+        <button type="submit" class="button button-upload">Submit CSV File</button>
+    </form> 
+    <button onclick="goBack()" class="button button-back">Back</button>
+</section>
+
+<footer>
+    <p>&copy; 2023 Hackathon. All rights reserved.</p>
+</footer>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>

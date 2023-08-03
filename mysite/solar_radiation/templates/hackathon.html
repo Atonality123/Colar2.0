@@ -1,0 +1,41 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block content%}
+<link rel="stylesheet" href="{% static 'hack.css' %}">
+
+<header>
+    <h1 >Welcome to Hackathon</h1>
+</header>
+
+<div class="container">
+    <div class="card">
+        <video id="vdo" src="https://cdn-icons-mp4.flaticon.com/512/10607/10607611.mp4" autoplay muted playsinline loop>
+            Your browser does not support the video tag.
+        </video>
+        <p></p>
+        <h1>Prediction</h1>
+        <h1>Solar Energy</h1>
+        <p class="title">"The use of solar energy has not been opened up because the oil industry does not own the sun." - Ralph Nader</p>
+        <p class="button"><a href="{% url 'solar_energy' %}"><button type="button">Let's hack!</button></a></p>
+    </div>
+    <div class="card">
+        <img id= "vdo" src="https://cdn-icons-gif.flaticon.com/8756/8756005.gif" alt="Animated GIF">
+        <p></p>
+        <h1>Prediction</h1>
+        <h1>Solar Radiation</h1>
+        <p class="title">"Solar radiation is the ultimate source of energy, warming our planet and fueling the forces of nature." - Unknown</p>
+        <p class="button"><a href="{% url 'solar_radiation' %}"><button type="button">Let's hack!</button></a></p> 
+    </div>
+    <div class="card">
+        <video id="vdo" src="https://cdn-icons-mp4.flaticon.com/512/8629/8629278.mp4" autoplay muted playsinline loop>
+            Your browser does not support the video tag.
+        </video>
+        <p></p>
+        <h1>Prediction</h1>
+        <h1>Energy Consumption</h1>
+        <p class="title">"The greatest threat to our planet is the belief that someone else will save it." - Robert Swan</p>
+        <p class="button"><a href="{% url 'energy_consumption' %}"><button type="button">Let's hack!</button></a></p>
+    </div> 
+</div>
+{% endblock%}
